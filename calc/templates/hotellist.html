@@ -1,0 +1,81 @@
+{% load static%}{% block pageContent%}
+<html>
+<head>
+    
+    <style>
+        .box{
+            width: 420px;
+            height: 410px;
+            margin: auto;
+            padding: 30px 50px 30px 50px;
+            border: 5px solid silver;
+            margin-top: 10px;
+            justify-contet: center;
+            align-items: center;
+
+        }
+        table{
+            font-famliy: arial,sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+
+        }
+        td,th{
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        .link{
+            text-decoration: none;
+            background-color: #0ca8e6;
+            color: white;
+            borde: 2px mintcream;
+            padding: 3px 10px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 20px;
+
+        }
+        .link:hover{
+            color: greenpale;
+
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1> list of hotels <a class="link" href="hotelDetails">Ad new</a></h1>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>location</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in hotel %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.price}}</td>
+                    <td>{{data.location}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        
+        </table>
+        
+    </div>
+    
+</body>
+
+</html>
+{% endblock pageContent%}

@@ -1,0 +1,66 @@
+{% load static%}{% block pageContent%}{% load crispy_forms_tags%}
+<html>
+<head>
+    
+    <style>
+        {
+            text-align: center;
+
+        }
+        .box{
+            width: 420px;
+            height: 410px;
+            margin: auto;
+            padding: 30px 50px 30px 50px;
+            border: 5px solid silver;
+            margin-top: 10px;
+            justify-contet: center;
+            align-items: center;
+            color:  greenpale;
+            background:linear-gradient(120deg,#2980b9, #8e44ad);
+
+        }
+        form{
+            margin: 0px;
+            padding: 0px;
+            height: 30px;
+            color: cyan;
+            top: 80px;
+            left: -100;
+            text-align: center;
+            transition: all .5s;
+
+        }
+        .link{
+            text-decoration: none;
+            background-color: white;
+            color: black;
+            borde: 2px mintcream;
+            padding: 3px 10px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 20px;
+
+        }
+        .link : hover{
+            color: burlywood
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 style="text-align: center;"> ZAN SUZA TRAVEL AGENCY</h1>
+    <div class="box">
+        <form method="POST" action="accomodation">
+            {% csrf_token %} {{Hotelform|crispy}}<br>
+          
+            <a class="link" href="hotelDetails">Cancel</a>
+            <button type="submit">submit</button><br>
+        </form>
+
+    </div>
+    
+</body>
+
+</html>
+{% endblock pageContent%}
